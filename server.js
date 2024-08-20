@@ -16,7 +16,7 @@ app.use(bodyparser.urlencoded({extended:true}))
 
 //set view engine
 app.set("view engine","ejs")
-app.set("views",path.resolve(__dirname,"views/ejs"))
+// app.set("views",path.resolve(__dirname,"views/ejs"))
 
 //load assets
 app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
@@ -24,7 +24,7 @@ app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
 app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
 app.get('/', (req,res) => {
-    res.send("CRUD Application")
+    res.render('index');
 })
 
 app.listen(PORT, () => {
