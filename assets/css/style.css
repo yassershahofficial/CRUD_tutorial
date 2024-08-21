@@ -12,13 +12,18 @@
     margin: 0;
     box-sizing: border-box;
 }
-a{
+a,button{
     text-decoration: none;
     cursor: pointer;
     box-shadow: 4px 4px 8px var(--border);
     border: 1px dotted var(--white)
 }
-h1,h2,h3,p,a{
+button{
+    padding: .8rem 1.6rem;
+    background-color: #fff;
+    
+}
+h1,h2,h3,p,a,button{
     font-family: "Noto Sans", sans-serif;
     color: var(--dark);
 }
@@ -34,13 +39,20 @@ h1{
 .top-form{
     text-align: left;
     margin-top: 4rem;
+    margin-bottom: 1rem;
 }
-.top-form a{
+.top-form a,.top-form h2{
     padding: .8rem 1.2rem;
     margin-left: 1rem;
 }
 .top-form a span{
     margin-right: 4px;
+}
+.bottom-form{
+    display: flex;
+    justify-content: right;
+    margin-right: 2rem;
+    max-width: 900px;
 }
 table{
     width: 100%;
@@ -70,4 +82,18 @@ table tbody tr:hover{
 }
 table tbody tr:hover td > a{
     box-shadow: none;
+}
+.form-group{
+    display: flex;
+    max-width: 300px;
+    text-align: left;
+    align-items: center;
+    margin: auto;
+    padding: .4rem 0;
+}
+.form-group label{
+    padding: 0 1rem 0 .4rem;
+}
+.form-group input[type="text"]{
+    padding: .4rem;
 }
