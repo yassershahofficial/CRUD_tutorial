@@ -96,4 +96,5 @@ table tbody tr:hover td > a{
 }
 .form-group input[type="text"]{
     padding: .4rem;
+    flex: 1;
 }
