@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    name:{
+    name:{  
         type: String,
         required: true
     },
@@ -12,7 +12,7 @@ var schema = new mongoose.Schema({
     },
     gender: String,
     status: String
-})
+});
 
-const Userdb = mongoose.model('userdb',schema);
+const Userdb = mongoose.model('userdb',schema,'userdb');
 module.exports = Userdb;
