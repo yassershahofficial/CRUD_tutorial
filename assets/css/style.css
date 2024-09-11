@@ -38,8 +38,8 @@ h1{
 }
 .top-form{
     text-align: left;
-    margin-top: 4rem;
     margin-bottom: 1rem;
+    margin-top: 5%;
 }
 .top-form a,.top-form h2{
     padding: .8rem 1.2rem;
@@ -48,11 +48,24 @@ h1{
 .top-form a span{
     margin-right: 4px;
 }
-.bottom-form{
+.bottom-form,.back-home{
     display: flex;
+    max-width: 900px;
+}
+.back-home{
+    justify-content: left;
+    box-shadow: none;
+    margin-top: 4rem;
+}
+.back-home i{
+    margin-right: -.5rem;
+}
+.back-home span{
+    margin-left: 1rem;
+}
+.bottom-form{
     justify-content: right;
     margin-right: 2rem;
-    max-width: 900px;
 }
 table{
     width: 100%;
