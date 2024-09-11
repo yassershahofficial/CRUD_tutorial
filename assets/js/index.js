@@ -7,32 +7,44 @@ $("#update_user").submit(function(event){
     event.preventDefault();
 
     var unindexed_array = $(this).serializeArray();
-    var data = {};
+    var latestdata = {};
 
     // console.log(unindexed_array);
     $.map(unindexed_array, function(n,i){
-        data[n['name']] = n['value']
+        latestdata[n['name']] = n['value']
     })
 
     var request = {
-        url: "http://localhost:3000/api/users/"+data.id,
-        type: "PUT",
-        dataType: "json",
-        data: JSON.stringify(data), 
-        success: function(response) {
-            console.log(response);
-        },
-        error: function(response) {
-            console.log(response);
-            console.log(request.url)
-        }
-    };
+        url: "http://localhost:3000/api/users/"+latestdata.id,
+        method: "PUT",
+        data: latestdata, 
+    }
     
     $.ajax(request).done(function(response){
         alert("Data updated successfully!");
+        location.replace('/')
     });
     $.ajax(request).fail(function(err,status){
         alert("Request failed: "+status+err.data)
     })
 
 })
+
+if(window.location.pathname == "/"){
+    $ondelete = $("table tbody td a.delete");
+    $ondelete.click(function(){
+        var id = $(this).attr("data-id")
+        
+        var request = {
+            url: "http://localhost:3000/api/users/"+id,
+            method: "delete"
+        }
+
+        if(confirm("Do you really want to delete this single record?")){
+            $.ajax(request).done(function(response){
+                alert("Data deleted successfully!");
+                location.reload()
+            })
+        }
+    })
+}

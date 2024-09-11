@@ -66,8 +66,7 @@ exports.update = (req,res)=>{
             if(!data){
                 res.status(404).send({message : `Cannot update user with id = ${id} , Maybe user not found`})
             }else{
-                // res.send(data)
-                res.redirect('/')
+                res.send({message : "User was update successfully!"})
             }
         })
         .catch(err =>{
